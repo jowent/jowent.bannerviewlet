@@ -5,5 +5,4 @@
  <object name="Folder" meta_type="Dexterity FTI"/>
  <object name="banner_image" meta_type="Dexterity FTI"/>
  <!-- -*- extra stuff goes here -*- -->
-  <object name="jowent.bannerview.bannerimage" meta_type="Dexterity FTI" />
 </object>
