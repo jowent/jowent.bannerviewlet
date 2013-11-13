@@ -32,6 +32,19 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+
+
+    <!-- Maybe use something like layer=".interfaces.IThemeSpecific" 
+         below -->    
+
+  <browser:viewlet
+    name="bannerviewlet"
+    class=".viewlets.BannerViewlet"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    template="bannerviewlet.pt"
+    permission="zope2.View"
+    />
+    
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>
