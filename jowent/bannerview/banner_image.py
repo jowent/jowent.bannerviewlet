@@ -21,12 +21,11 @@ from jowent.bannerview import MessageFactory as _
 
 class IBannerImage(form.Schema, IImageScaleTraversable):
     """
-    An image that will be displayed in the Banner Viewlet for it's folder, or any contained content that does not have a Lead Image set
+    An image that will be displayed in the Banner Viewlet for it's folder, 
+    or any contained content that does not have a Lead Image set
     """
 
-    # If you want a schema-defined interface, delete the model.load
-    # line below and delete the matching file in the models sub-directory.
-    # If you want a model-based interface, edit
+    # We want a model-based interface, edit
     # models/banner_image.xml to define the content type.
 
     form.model("models/banner_image.xml")
