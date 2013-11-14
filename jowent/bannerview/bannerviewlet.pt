@@ -1,5 +1,5 @@
 <div class="banner-viewlet"
      tal:condition="view/available">
   <img tal:define="scale context/@@images"
-       tal:replace="structure python: scale.scale('image', width=2000, height=400).tag(css_class='banner-img')" />
+       tal:replace="structure python: scale.scale('image', width=2000, height=320).tag(css_class='banner-img')" />
 </div>
