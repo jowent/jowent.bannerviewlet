@@ -2,6 +2,8 @@
 from plone.namedfile.interfaces import INamedBlobImageField
 # from plone.app.contenttypes.interfaces import IImage
 from plone.app.contenttypes.behaviors.leadimage import ILeadImage
+from plone.app.contenttypes.interfaces import INewsItem
+
 from zope.interface import Invalid
 from z3c.form import validator
 from five import grok
@@ -17,6 +19,9 @@ class ImageDimensionsValidator(validator.FileUploadValidator):
 
     def validate(self, value):
         super(ImageDimensionsValidator, self).validate(value)
+
+        if INewsItem.providedBy(value):
+            return None
 
         if value:
             # See: plone.namedfile.file.NamedBlobImage
