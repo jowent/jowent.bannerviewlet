@@ -1,6 +1,7 @@
-<div id="banner-img"
+<div id="banner-viewlet"
      tal:condition="view/available">
-  <div tal:define="scale context/@@images;
+  <div id="banner-img"
+       tal:define="scale context/@@images;
                    banner python:scale.scale('image', width=2000, height=320)"
        tal:attributes="style string:background-image:url(${banner/url})" />
 </div>
