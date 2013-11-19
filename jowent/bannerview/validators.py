@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from plone.namedfile.interfaces import INamedBlobImageField
-# from plone.app.contenttypes.interfaces import IImage
 from plone.app.contenttypes.behaviors.leadimage import ILeadImage
 from plone.app.contenttypes.interfaces import INewsItem
 
@@ -8,11 +7,12 @@ from zope.interface import Invalid
 from z3c.form import validator
 from five import grok
 
-# 1 MB size limit
-MAXSIZE = 1024 * 1024
-
+# Strict Dimensions check
 REQUIRED_HEIGHT = 320
 REQUIRED_WIDTH = 2000
+
+# Filesize limit
+MAXSIZE_KB = 200
 
 
 class ImageDimensionsValidator(validator.FileUploadValidator):
@@ -41,6 +41,11 @@ class ImageDimensionsValidator(validator.FileUploadValidator):
                 if (width != REQUIRED_WIDTH):
                     raise Invalid("Image is the wrong width - it should be %d pixels" %
                                   (REQUIRED_WIDTH))
+
+            # Lastly check filesize
+            if value.getSize() > (MAXSIZE_KB * 1024):
+                raise Invalid("Image filesize is too large. Maximum permitted: %dKB " % MAXSIZE_KB)
+            
 
 
 validator.WidgetValidatorDiscriminators(ImageDimensionsValidator,
