@@ -22,13 +22,23 @@ class BannerViewlet(ViewletBase):
 
     def update(self):
 
-        if ILeadImage.providedBy(self.context):
-            self.context = ILeadImage(self.context)
-            self.available = True if self.context.image else False
-            #if INewsItem.providedBy(self.context):
-                #self.available = False
-        else:
-            self.available = False
+        if not INewsItem.providedBy(self.context):
+            if ILeadImage.providedBy(self.context):
+                self.context = ILeadImage(self.context)
+                if self.context.image:
+                    self.available = True 
+                    return
+
+        # Check parent
+        parent = self.context.aq_parent
+        if ILeadImage.providedBy(parent):
+            self.context = ILeadImage(parent)
+            if parent.image:
+                self.available = True
+                return
+                
+        # Could not find lead image
+        self.available = False
 
 
 
