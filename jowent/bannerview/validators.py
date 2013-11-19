@@ -20,7 +20,7 @@ class ImageDimensionsValidator(validator.FileUploadValidator):
     def validate(self, value):
         super(ImageDimensionsValidator, self).validate(value)
 
-        if INewsItem.providedBy(value):
+        if INewsItem.providedBy(self.context):
             return None
 
         if value:
