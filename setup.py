@@ -28,6 +28,11 @@ setup(name='jowent.bannerview',
           'setuptools',
           'plone.app.dexterity [grok]',
           'plone.namedfile [blobs]',
+          'plone.behavior',
+          'plone.directives.form',
+          'zope.schema',
+          'zope.interface',
+          'zope.component',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

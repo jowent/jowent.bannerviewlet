@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="jowent.bannerview">
+
+    <include package="plone.behavior" file="meta.zcml" />
+
+    <include package="plone.directives.form" file="meta.zcml" />
+    <include package="plone.directives.form" />
+
+    <plone:behavior
+        title="Banner Image"
+        description="Adds the option to specify the image used in the banner viewlet"
+        provides=".bannerimage.IBannerImage"
+        factory=".bannerimage.BannerImage"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        marker=".bannerimage.IBannerImage"
+        />
+
+
+</configure>
