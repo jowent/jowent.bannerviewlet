@@ -28,9 +28,9 @@
        in Plone -->
   <genericsetup:registerProfile
       name="default"
-      title="Banner Viewlet based on plone.app.contenttypes leadimage"
+      title="Banner/Slideshow Viewlet"
       directory="profiles/default"
-      description="Extension profile for Banner Viewlet based on plone.app.contenttypes leadimage"
+      description="Extension profile for Banner/Slideshow Viewlet"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
