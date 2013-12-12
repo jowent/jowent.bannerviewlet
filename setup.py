@@ -5,7 +5,7 @@ version = '0.4'
 
 setup(name='jowent.bannerview',
       version=version,
-      description="Banner Viewlet based on plone.app.contenttypes leadimage",
+      description="Banner/Slideshow Viewlet",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
