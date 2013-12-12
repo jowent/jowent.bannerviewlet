@@ -52,6 +52,14 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for BannerSlide
+        ztc.ZopeDocFileSuite(
+            'BannerSlide.txt',
+            package='jowent.bannerview',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for BannerImage
         ztc.ZopeDocFileSuite(
             'BannerImage.txt',
