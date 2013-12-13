@@ -24,12 +24,7 @@ class IBannerSlide(form.Schema, IImageScaleTraversable):
     An image that will be displayed in the BannerViewlet as part of a slideshow
     """
 
-    # If you want a schema-defined interface, delete the model.load
-    # line below and delete the matching file in the models sub-directory.
-    # If you want a model-based interface, edit
-    # models/banner_slide.xml to define the content type.
-
-    form.model("models/banner_slide.xml")
+    # field defintions go here
 
 
 # Custom content-type class; objects created for this content type will
@@ -53,11 +48,11 @@ class BannerSlide(Container):
 # of this type by uncommenting the grok.name line below or by
 # changing the view class name and template filename to View / view.pt.
 
-class SampleView(grok.View):
-    """ sample view class """
+#class SampleView(grok.View):
+    #""" sample view class """
 
-    grok.context(IBannerSlide)
-    grok.require('zope2.View')
+    #grok.context(IBannerSlide)
+    #grok.require('zope2.View')
 
     # grok.name('view')
 
