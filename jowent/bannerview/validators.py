@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from plone.namedfile.interfaces import INamedBlobImageField
-from plone.app.contenttypes.behaviors.leadimage import ILeadImage
-from plone.app.contenttypes.interfaces import INewsItem
+from jowent.bannerview.behaviors.bannerimage import IBannerImage
+#from plone.app.contenttypes.behaviors.leadimage import ILeadImage
+#from plone.app.contenttypes.interfaces import INewsItem
 
 from zope.interface import Invalid
 from z3c.form import validator
@@ -19,9 +20,6 @@ class ImageDimensionsValidator(validator.FileUploadValidator):
 
     def validate(self, value):
         super(ImageDimensionsValidator, self).validate(value)
-
-        if INewsItem.providedBy(self.context):
-            return None
 
         if value:
             # See: plone.namedfile.file.NamedBlobImage
@@ -49,6 +47,6 @@ class ImageDimensionsValidator(validator.FileUploadValidator):
 
 
 validator.WidgetValidatorDiscriminators(ImageDimensionsValidator,
-                                        context=ILeadImage,
-                                        field=ILeadImage['image'])
+                                        context=IBannerImage,
+                                        field=IBannerImage['banner_image'])
 grok.global_adapter(ImageDimensionsValidator)

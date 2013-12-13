@@ -39,7 +39,7 @@ class BannerViewlet(ViewletBase):
                 banner = IBannerImage(self.context)
                 if banner.banner_image:
                     logger.info("context has banner_image")
-                    self.banners = list(banner)
+                    self.banners = [banner]
                     self.available = True
                     return 
                     
@@ -57,7 +57,7 @@ class BannerViewlet(ViewletBase):
             banner = IBannerImage(folder)
             if banner.banner_image:
                 logger.info("banner_image defined by folder")
-                self.banners = list(banner)
+                self.banners = [banner]
                 self.available = True
                 return 
         
