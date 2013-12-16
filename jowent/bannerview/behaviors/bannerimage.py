@@ -21,7 +21,7 @@ class IBannerImage(model.Schema):
         required=False,
     )
 
-    form.order_before(banner_image='IDublinCore.description')
+    form.order_before(banner_image_caption='IDublinCore.description')
     banner_image_caption = schema.TextLine(
         title=_(u"Banner Image Caption"),
         description=u"",
