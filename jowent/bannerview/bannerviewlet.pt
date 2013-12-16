@@ -25,7 +25,7 @@
              >
             <div class="banner-slide"
                  tal:define="scale banner/@@images;
-                             b_img python:scale.scale('banner_image', width=1700, height=320, direction='up')"
+                             b_img python:scale.scale('banner_image', width=2000, height=320, direction='up')"
                  tal:attributes="style string:background-image:url(${b_img/url})" />
         </tal:image_set>
     </div>
