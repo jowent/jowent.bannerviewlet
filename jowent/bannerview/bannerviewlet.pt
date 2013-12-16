@@ -1,20 +1,32 @@
 <div id="banner-viewlet"
      tal:condition="view/available">
+     
     <tal:single_image 
-         condition="python:len(view.banners) == 1"
+         define="banners view/banners"
+         condition="python:len(banners) == 1"
          >
         <div id="banner-img"
-             tal:define="context python: view.banners[0];
-                         scale context/@@images;
-                         banner python:scale.scale('banner_image', width=2000, height=320, direction='up')"
-             tal:attributes="style string:background-image:url(${banner/url})" />
+             tal:define="banner python: banners[0];
+                         scale banner/@@images;
+                         b_img python:scale.scale('banner_image', width=2000, height=320, direction='up')"
+             tal:attributes="style string:background-image:url(${b_img/url})" />
     </tal:single_image>
-    <tal:slideshow 
-         condition="python:len(view.banners) > 1"
-         repeat="ban view/banners">
-        <div id="banner-img"
-             tal:define="scale ban/@@images;
-                         banner python:scale.scale('banner_image', width=2000, height=320, direction='up')"
-             tal:attributes="style string:background-image:url(${banner/url})" />
-    </tal:slideshow>
+    
+    <div class="cycle-slideshow" 
+         data-cycle-slides="> div.banner-slide"
+         data-cycle-timeout="8000"
+         data-cycle-speed="800"
+
+         tal:define="banners view/banners"
+         tal:condition="python:len(banners) > 1"
+         >
+        <tal:image_set
+             repeat="banner banners" 
+             >
+            <div class="banner-slide"
+                 tal:define="scale banner/@@images;
+                             b_img python:scale.scale('banner_image', width=1700, height=320, direction='up')"
+                 tal:attributes="style string:background-image:url(${b_img/url})" />
+        </tal:image_set>
+    </div>
 </div>
