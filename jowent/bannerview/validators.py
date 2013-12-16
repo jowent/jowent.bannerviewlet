@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from plone.namedfile.interfaces import INamedBlobImageField
 from jowent.bannerview.behaviors.bannerimage import IBannerImage
-#from plone.app.contenttypes.behaviors.leadimage import ILeadImage
-#from plone.app.contenttypes.interfaces import INewsItem
+
 
 from zope.interface import Invalid
 from z3c.form import validator
