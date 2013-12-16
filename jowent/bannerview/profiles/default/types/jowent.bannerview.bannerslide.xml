@@ -7,7 +7,7 @@
   <property name="title" i18n:translate="">Banner Slide</property>
   <property name="description"
     i18n:translate="">An image that will be displayed in the BannerViewlet as part of a slideshow</property>
-  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
+  <property name="icon_expr">string:${portal_url}/image_icon.png</property>
   <property name="factory">jowent.bannerview.bannerslide</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
