@@ -42,18 +42,11 @@ class BannerSlide(Container):
 # The view will automatically use a similarly named template in
 # banner_slide_templates.
 # Template filenames should be all lower case.
-# The view will render when you request a content object with this
-# interface with "/@@sampleview" appended.
-# You may make this the default view for content objects
-# of this type by uncommenting the grok.name line below or by
-# changing the view class name and template filename to View / view.pt.
 
-#class SampleView(grok.View):
-    #""" sample view class """
+class View(grok.View):
+    """ standard view class """
 
-    #grok.context(IBannerSlide)
-    #grok.require('zope2.View')
-
-    # grok.name('view')
+    grok.context(IBannerSlide)
+    grok.require('zope2.View')
 
     # Add view methods here
