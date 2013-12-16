@@ -31,6 +31,7 @@ class BannerViewlet(ViewletBase):
 
     def update(self):
 
+        logger.info("starting banner search at %s " % self.context )
         if IFolderish.providedBy(self.context):
             logger.info("findBannerImageFor(self) %s " % self.context )
             self.findBannerImageFor(self.context)
@@ -43,6 +44,7 @@ class BannerViewlet(ViewletBase):
                     self.available = True
                     return 
                     
+            #parent = self.context.aq_parent
             parent = self.context.aq_parent
             logger.info("findBannerImageFor(parent) %s " % parent )
             self.findBannerImageFor(parent)
@@ -75,17 +77,23 @@ class BannerViewlet(ViewletBase):
                          object_provides=IBannerSlide.__identifier__,
                          review_state="published",
                          sort_on="getObjPositionInParent")
-        logger.info("got portal catalog %s" % brains)
         if brains:
-            self.banners = [b.getObject() for b in brains]
-            self.available = True
-            return
+            self.banners = []
+            for brain in brains:
+                obj = brain.getObject()
+                if obj.banner_image:
+                    self.banners.append(obj)
+            logger.info("got portal catalog %s" % self.banners)
+            if self.banners:
+                self.available = True
+                return
         
         
         # Lastly check the parent (unless this is the navigation root)
         if not INavigationRoot.providedBy(folder):
-            logger.info("check parent")
+            #parent = folder.aq_parent
             parent = folder.aq_parent
+            logger.info("check parent - findBannerImageFor(parent) %s " % parent )
             self.findBannerImageFor(parent)
         else:
             # Otherwise - we searched all the way to the nav root & found nothing
