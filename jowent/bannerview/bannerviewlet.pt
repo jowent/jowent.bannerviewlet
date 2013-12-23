@@ -1,8 +1,9 @@
 <div id="banner-viewlet"
      tal:condition="view/available">
-     
+  <tal:defs
+       define="banners view/banners"  >
+
     <tal:single_image 
-         define="banners view/banners"
          condition="python:len(banners) == 1"
          >
         <div id="banner-img"
@@ -17,7 +18,6 @@
          data-cycle-timeout="8000"
          data-cycle-speed="800"
 
-         tal:define="banners view/banners"
          tal:condition="python:len(banners) > 1"
          >
         <tal:image_set
@@ -29,4 +29,6 @@
                  tal:attributes="style string:background-image:url(${b_img/url})" />
         </tal:image_set>
     </div>
+
+  </tal:defs>
 </div>
