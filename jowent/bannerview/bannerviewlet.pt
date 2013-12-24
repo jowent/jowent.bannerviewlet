@@ -6,7 +6,7 @@
     <tal:single_image 
          condition="python:len(banners) == 1"
          >
-        <div id="banner-img"
+        <div class="banner-img"
              tal:define="banner python: banners[0];
                          scale banner/@@images;
                          b_img python:scale.scale('banner_image', width=2000, height=320, direction='up')"

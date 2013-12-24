@@ -3,7 +3,7 @@
     overflow-x: hidden;
 }
 
-#banner-viewlet #banner-img {
+#banner-viewlet .banner-img {
     display:    block;
     background-position: center bottom;
     background-repeat: no-repeat;
