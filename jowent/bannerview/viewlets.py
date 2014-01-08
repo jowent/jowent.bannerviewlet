@@ -13,6 +13,8 @@ import logging
 
 logger = logging.getLogger('jowent.bannerviewlet')
 
+# Our logging will be shown with level at INFO & not with level at WARN
+logger.setLevel(logging.WARN)
 
 class BannerViewlet(ViewletBase):
     """ 
@@ -39,7 +41,7 @@ class BannerViewlet(ViewletBase):
             if IBannerImage.providedBy(self.context):
                 banner = IBannerImage(self.context)
                 if banner.banner_image:
-                    logger.info("context has banner_image")
+                    logger.info("banner_image defined by context %s" % self.context)
                     self.banners = [banner]
                     self.available = True
                     return 
@@ -58,7 +60,7 @@ class BannerViewlet(ViewletBase):
         if IBannerImage.providedBy(folder):
             banner = IBannerImage(folder)
             if banner.banner_image:
-                logger.info("banner_image defined by folder")
+                logger.info("banner_image defined by folder %s" % folder)
                 self.banners = [banner]
                 self.available = True
                 return 
@@ -69,10 +71,7 @@ class BannerViewlet(ViewletBase):
         path = folder.getPhysicalPath()
         path = "/".join(path)
 
-        #catalog = getToolByName(self.context, 'portal_catalog')
-        logger.info("getting portal catalog")
-        catalog = self.context.portal_catalog
-        logger.info("searching portal catalog")
+        catalog = getToolByName(self.context, 'portal_catalog')
         brains = catalog(path={"query": path, "depth": 1}, 
                          object_provides=IBannerSlide.__identifier__,
                          review_state="published",
@@ -83,7 +82,8 @@ class BannerViewlet(ViewletBase):
                 obj = brain.getObject()
                 if obj.banner_image:
                     self.banners.append(obj)
-            logger.info("got portal catalog %s" % self.banners)
+            logger.info("Found the banners %s inside folder %s" % 
+                        (self.banners, folder))
             if self.banners:
                 self.available = True
                 return
