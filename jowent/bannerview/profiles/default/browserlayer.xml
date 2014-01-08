@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+ <layer
+     name="jowent.bannerview"
+     interface="jowent.bannerview.interfaces.IBannerViewletInstalled"
+     />
+</layers>
