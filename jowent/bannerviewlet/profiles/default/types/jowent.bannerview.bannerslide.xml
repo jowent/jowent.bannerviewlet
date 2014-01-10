@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
-<object name="jowent.bannerview.bannerslide"
+<object name="jowent.bannerviewlet.bannerslide"
    meta_type="Dexterity FTI"
-   i18n:domain="jowent.bannerview" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+   i18n:domain="jowent.bannerviewlet" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
   <property name="title" i18n:translate="">Banner Slide</property>
   <property name="description"
     i18n:translate="">An image that will be displayed in the BannerViewlet as part of a slideshow</property>
   <property name="icon_expr">string:${portal_url}/image_icon.png</property>
-  <property name="factory">jowent.bannerview.bannerslide</property>
+  <property name="factory">jowent.bannerviewlet.bannerslide</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types" />
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">jowent.bannerview.banner_slide.IBannerSlide</property>
-  <property name="klass">jowent.bannerview.banner_slide.BannerSlide</property>
+  <property name="schema">jowent.bannerviewlet.banner_slide.IBannerSlide</property>
+  <property name="klass">jowent.bannerviewlet.banner_slide.BannerSlide</property>
 
   <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
-     <element value="jowent.bannerview.behaviors.bannerimage.IBannerImage"/>
+     <element value="jowent.bannerviewlet.behaviors.bannerimage.IBannerImage"/>
    </property>
 
   <!-- View information -->

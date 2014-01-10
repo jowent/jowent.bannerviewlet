@@ -34,7 +34,7 @@
   <element value="plone.app.relationfield.behavior.IRelatedItems"/>
   <element
      value="plone.app.dexterity.behaviors.nextprevious.INextPreviousToggle"/>
-  <element value="jowent.bannerview.behaviors.bannerimage.IBannerImage"/>
+  <element value="jowent.bannerviewlet.behaviors.bannerimage.IBannerImage"/>
  </property>
  <property name="schema"></property>
  <property name="model_source"></property>

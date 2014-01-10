@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone.namedfile.interfaces import INamedBlobImageField
-from jowent.bannerview.behaviors.bannerimage import IBannerImage
+from jowent.bannerviewlet.behaviors.bannerimage import IBannerImage
 
 
 from zope.interface import Invalid

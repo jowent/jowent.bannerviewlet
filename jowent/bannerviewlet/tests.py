@@ -8,12 +8,12 @@ from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import PloneSite
 from Products.PloneTestCase.layer import onsetup
 
-import jowent.bannerview
+import jowent.bannerviewlet
 
 OPTION_FLAGS = doctest.NORMALIZE_WHITESPACE | \
                doctest.ELLIPSIS
 
-ptc.setupPloneSite(products=['jowent.bannerview'])
+ptc.setupPloneSite(products=['jowent.bannerviewlet'])
 
 
 class TestCase(ptc.PloneTestCase):
@@ -23,7 +23,7 @@ class TestCase(ptc.PloneTestCase):
         @classmethod
         def setUp(cls):
             zcml.load_config('configure.zcml',
-              jowent.bannerview)
+              jowent.bannerviewlet)
 
         @classmethod
         def tearDown(cls):
@@ -35,18 +35,18 @@ def test_suite():
 
         # Unit tests
         #doctestunit.DocFileSuite(
-        #    'README.txt', package='jowent.bannerview',
+        #    'README.txt', package='jowent.bannerviewlet',
         #    setUp=testing.setUp, tearDown=testing.tearDown),
 
         #doctestunit.DocTestSuite(
-        #    module='jowent.bannerview.mymodule',
+        #    module='jowent.bannerviewlet.mymodule',
         #    setUp=testing.setUp, tearDown=testing.tearDown),
 
 
         # Integration tests that use PloneTestCase
         ztc.ZopeDocFileSuite(
             'INTEGRATION.txt',
-            package='jowent.bannerview',
+            package='jowent.bannerviewlet',
             optionflags = OPTION_FLAGS,
             test_class=TestCase),
 
@@ -55,7 +55,7 @@ def test_suite():
         # Integration tests for BannerSlide
         ztc.ZopeDocFileSuite(
             'BannerSlide.txt',
-            package='jowent.bannerview',
+            package='jowent.bannerviewlet',
             optionflags = OPTION_FLAGS,
             test_class=TestCase),
 
@@ -63,7 +63,7 @@ def test_suite():
         # Integration tests for BannerImage
         ztc.ZopeDocFileSuite(
             'BannerImage.txt',
-            package='jowent.bannerview',
+            package='jowent.bannerviewlet',
             optionflags = OPTION_FLAGS,
             test_class=TestCase),
 

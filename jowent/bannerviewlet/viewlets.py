@@ -2,8 +2,8 @@
 from plone.app.layout.viewlets import ViewletBase
 
 from plone.app.contenttypes.interfaces import INewsItem
-from jowent.bannerview.behaviors.bannerimage import IBannerImage
-from jowent.bannerview.banner_slide import IBannerSlide
+from jowent.bannerviewlet.behaviors.bannerimage import IBannerImage
+from jowent.bannerviewlet.banner_slide import IBannerSlide
 
 from Products.CMFCore.interfaces import IFolderish
 from plone.app.layout.navigation.interfaces import INavigationRoot

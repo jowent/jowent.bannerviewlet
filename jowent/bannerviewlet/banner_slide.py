@@ -8,7 +8,7 @@ from plone.directives import dexterity, form
 from plone.namedfile.interfaces import IImageScaleTraversable
 
 
-from jowent.bannerview import MessageFactory as _
+from jowent.bannerviewlet import MessageFactory as _
 
 
 # Interface class; used to define content-type schema.

@@ -3,6 +3,6 @@
  <property name="title">Controls the available content types in your portal</property>
  <object name="Document" meta_type="Dexterity FTI"/>
  <object name="Folder" meta_type="Dexterity FTI"/>
- <object name="jowent.bannerview.bannerslide" meta_type="Dexterity FTI" />
+ <object name="jowent.bannerviewlet.bannerslide" meta_type="Dexterity FTI" />
  <!-- -*- extra stuff goes here -*- -->
 </object>

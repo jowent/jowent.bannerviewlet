@@ -3,7 +3,7 @@
  <object name="navtree_properties" meta_type="Plone Property Sheet">
 
   <property name="metaTypesNotToList" type="lines" purge="false">
-   <element value="jowent.bannerview.bannerslide"/>
+   <element value="jowent.bannerviewlet.bannerslide"/>
   </property>
 
  </object>

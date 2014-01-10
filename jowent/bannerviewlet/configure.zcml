@@ -6,7 +6,7 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="jowent.bannerview">
+    i18n_domain="jowent.bannerviewlet">
 
   <!-- Include configuration for dependencies listed in setup.py -->
   <includeDependencies package="." />
@@ -19,7 +19,7 @@
   <!-- Register a resource directory from which we can deploy static
    resource files. -->
   <browser:resourceDirectory
-      name="jowent.bannerview"
+      name="jowent.bannerviewlet"
       directory="resources" />
 
   <i18n:registerTranslations directory="locales" />

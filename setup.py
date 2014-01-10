@@ -3,7 +3,7 @@ import os
 
 version = '0.6'
 
-setup(name='jowent.bannerview',
+setup(name='jowent.bannerviewletlet',
       version=version,
       description="Banner/Slideshow Viewlet",
       long_description=open("README.txt").read() + "\n" +
@@ -18,7 +18,7 @@ setup(name='jowent.bannerview',
       keywords='Plone, Banner, Viewlet, Carousel, plone.app.contenttypes',
       author='Daniel Jowett',
       author_email='daniel@jowettenterprises.com',
-      url='http://www.jowettenterprises.com/products/bannerview/',
+      url='http://www.jowettenterprises.com/products/bannerviewlet/',
       license='GPL version 2',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['jowent'],

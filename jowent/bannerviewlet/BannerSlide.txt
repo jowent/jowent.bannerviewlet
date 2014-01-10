@@ -9,12 +9,12 @@ Create a BannerSlide object and put it in a folder
     Create the object::
 
     >>> from zope.component import createObject
-    >>> container = createObject('jowent.bannerview.bannerslide')
+    >>> container = createObject('jowent.bannerviewlet.bannerslide')
 
     Verify it's type::
 
     >>> container.portal_type
-    'jowent.bannerview.bannerslide'
+    'jowent.bannerviewlet.bannerslide'
 
     Give it a title::
 
