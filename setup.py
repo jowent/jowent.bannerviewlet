@@ -3,7 +3,7 @@ import os
 
 version = '0.6'
 
-setup(name='jowent.bannerviewletlet',
+setup(name='jowent.bannerviewlet',
       version=version,
       description="Banner/Slideshow Viewlet",
       long_description=open("README.txt").read() + "\n" +
