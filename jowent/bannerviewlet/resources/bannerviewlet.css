@@ -1,9 +1,10 @@
 #banner-viewlet {
-    margin:     auto 0;
+    margin:     20px auto 45px;
     overflow-x: hidden;
 }
 
-#banner-viewlet .banner-img {
+#banner-viewlet .banner-img,
+#banner-viewlet .banner-slide {
     display:    block;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -17,3 +18,4 @@
 #portal-columns {
     clear: both;
 }
+
