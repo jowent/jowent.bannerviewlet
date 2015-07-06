@@ -35,8 +35,13 @@ setup(name='jowent.bannerviewlet',
           'zope.component',
           'plone.app.registry',
       ],
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'plone.app.robotframework[debug]',
+          ],
+      },
       entry_points="""
-      # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
       target = plone
       """,
