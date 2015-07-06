@@ -33,6 +33,7 @@ setup(name='jowent.bannerviewlet',
           'zope.schema',
           'zope.interface',
           'zope.component',
+          'plone.app.registry',
       ],
       entry_points="""
       # -*- Entry points: -*-

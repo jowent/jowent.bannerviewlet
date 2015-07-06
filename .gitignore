@@ -2,6 +2,7 @@
 # Standard python & egg files we ignore
 *.py[co]
 *.egg
+*.eggs
 *.egg-info
 # Ignore dist directory
 dist

@@ -11,8 +11,9 @@
   <!-- Include configuration for dependencies listed in setup.py -->
   <includeDependencies package="." />
 
+  <include package="plone.app.registry" />
   <include package=".behaviors" />
-    
+
   <!-- Grok the package to initialize schema interfaces and content classes -->
   <grok:grok package="." />
 
@@ -43,7 +44,13 @@
     layer=".interfaces.IBannerViewletInstalled"
     permission="zope2.View"
     />
-    
-  <!-- -*- extra stuff goes here -*- -->
+
+  <!-- Control panel -->
+  <browser:page
+    name="bannerviewlet-settings"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".controlpanel.BannerViewletSettingsControlPanel"
+    permission="cmf.ManagePortal"
+    />
 
 </configure>
