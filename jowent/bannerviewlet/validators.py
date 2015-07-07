@@ -1,18 +1,12 @@
 # -*- coding: utf-8 -*-
-from plone.namedfile.interfaces import INamedBlobImageField
-from jowent.bannerviewlet.behaviors.bannerimage import IBannerImage
-
-
-from zope.interface import Invalid
-from z3c.form import validator
 from five import grok
-
-# Strict Dimensions check
-REQUIRED_HEIGHT = 320
-REQUIRED_WIDTH = 2000
-
-# Filesize limit
-MAXSIZE_KB = 200
+from jowent.bannerviewlet.behaviors.bannerimage import IBannerImage
+from jowent.bannerviewlet.interfaces import IBannerViewletSettings
+from plone.namedfile.interfaces import INamedBlobImageField
+from plone.registry.interfaces import IRegistry
+from z3c.form import validator
+from zope.component import getUtility
+from zope.interface import Invalid
 
 
 class ImageDimensionsValidator(validator.FileUploadValidator):
@@ -23,26 +17,30 @@ class ImageDimensionsValidator(validator.FileUploadValidator):
         if value:
             # See: plone.namedfile.file.NamedBlobImage
             width, height = value.getImageSize()
-            
-            if REQUIRED_HEIGHT and REQUIRED_WIDTH:
-                if (width != REQUIRED_WIDTH or
-                    height != REQUIRED_HEIGHT):
+
+            registry = getUtility(IRegistry)
+            settings = registry.forInterface(IBannerViewletSettings)
+
+            # For the time being, ignore settings.dimensions_policy and
+            # go with an *exact* Dimensions check
+            if settings.required_height and settings.required_width:
+                if (width != settings.required_width or
+                    height != settings.required_height):
                     raise Invalid("Image has wrong dimensions - it should be %d x %d pixels (h x w)"
                                   ", but is %d x %d" %
-                                  (REQUIRED_HEIGHT, REQUIRED_WIDTH, height, width))
-            elif REQUIRED_HEIGHT:
-                if (height != REQUIRED_HEIGHT):
+                                  (settings.required_height, settings.required_width, height, width))
+            elif settings.required_height:
+                if (height != settings.required_height):
                     raise Invalid("Image is the wrong height - it should be %d pixels" %
-                                  (REQUIRED_HEIGHT))
-            elif REQUIRED_WIDTH:
-                if (width != REQUIRED_WIDTH):
+                                  (settings.required_height))
+            elif settings.required_width:
+                if (width != settings.required_width):
                     raise Invalid("Image is the wrong width - it should be %d pixels" %
-                                  (REQUIRED_WIDTH))
+                                  (settings.required_width))
 
             # Lastly check filesize
-            if value.getSize() > (MAXSIZE_KB * 1024):
-                raise Invalid("Image filesize is too large. Maximum permitted: %dKB " % MAXSIZE_KB)
-            
+            if value.getSize() > (settings.max_filesize * 1024):
+                raise Invalid("Image filesize is too large. Maximum permitted: %dKB " % settings.max_filesize)
 
 
 validator.WidgetValidatorDiscriminators(ImageDimensionsValidator,
