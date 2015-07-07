@@ -30,15 +30,16 @@ class IBannerViewletSettings(Interface):
         title=_(u"Banner Validation Policy"),
         description=u"",
         vocabulary=policy_options,
+        default='exact',
         required=True,
     )
     required_height = schema.Int(title=_(u"Banner Height"),
                                  required=True,
-                                 default=2000)
+                                 default=320)
 
     required_width = schema.Int(title=_(u"Banner Width"),
                                 required=True,
-                                default=320)
+                                default=2000)
 
     max_size = schema.Int(title=_(u"Maximum Filesize (in KB)"),
                           description=_(u"Leave this empty to stop filesize being checked"),

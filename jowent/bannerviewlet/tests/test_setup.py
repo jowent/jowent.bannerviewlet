@@ -30,21 +30,3 @@ class TestSetup(unittest.TestCase):
         from jowent.bannerviewlet.interfaces import IBannerViewletInstalled
         from plone.browserlayer import utils
         self.assertIn(IBannerViewletInstalled, utils.registered_layers())
-
-    def test_controlpanel_view(self):
-        """Test the controlpanel is visible."""
-        from zope.component import getMultiAdapter
-        view = getMultiAdapter((self.portal, self.portal.REQUEST),
-                               name="bannerviewlet-settings")
-        view = view.__of__(self.portal)
-        self.failUnless(view())
-
-    def test_controlpanel_view_protected(self):
-        """Test that the control panel view is protected and anonymous users can't view or edit it."""
-        from AccessControl import Unauthorized
-        from plone.app.testing import logout
-        portal = self.layer['portal']
-        logout()
-        self.assertRaises(Unauthorized,
-                          self.portal.restrictedTraverse,
-                         '@@bannerviewlet-settings')

@@ -11,7 +11,7 @@ from plone.testing import z2
 import jowent.bannerviewlet
 
 
-class BorgPolicyLayer(PloneSandboxLayer):
+class BannerViewletLayer(PloneSandboxLayer):
 
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
@@ -21,7 +21,7 @@ class BorgPolicyLayer(PloneSandboxLayer):
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'jowent.bannerviewlet:default')
 
-JOWENT_BANNERVIEWLET_FIXTURE = BorgPolicyLayer()
+JOWENT_BANNERVIEWLET_FIXTURE = BannerViewletLayer()
 
 
 JOWENT_BANNERVIEWLET_INTEGRATION_TESTING = IntegrationTesting(
