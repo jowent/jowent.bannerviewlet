@@ -41,7 +41,7 @@ class IBannerViewletSettings(Interface):
                                 required=True,
                                 default=2000)
 
-    max_size = schema.Int(title=_(u"Maximum Filesize (in KB)"),
-                          description=_(u"Leave this empty to stop filesize being checked"),
-                          required=False,
-                          default=200)
+    max_filesize = schema.Int(title=_(u"Maximum Filesize (in KB)"),
+                              description=_(u"Leave this empty to stop filesize being checked"),
+                              required=False,
+                              default=200)
