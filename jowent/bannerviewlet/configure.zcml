@@ -35,16 +35,6 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-
-  <browser:viewlet
-    name="bannerviewlet"
-    class=".viewlets.BannerViewlet"
-    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-    template="bannerviewlet.pt"
-    layer=".interfaces.IBannerViewletInstalled"
-    permission="zope2.View"
-    />
-
   <!-- Control panel -->
   <browser:page
     name="bannerviewlet-settings"

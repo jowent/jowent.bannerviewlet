@@ -3,6 +3,10 @@
     overflow-x: hidden;
 }
 
+#viewlet-above-content #banner-viewlet {
+    margin:     0 auto 10px;
+}
+
 #banner-viewlet .banner-img,
 #banner-viewlet .banner-slide {
     display:    block;
