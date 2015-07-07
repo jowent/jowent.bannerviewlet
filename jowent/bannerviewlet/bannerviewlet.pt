@@ -13,7 +13,7 @@
              tal:define="banner python: banners[0];
                          scale banner/@@images;
                          b_img python:scale.scale('banner_image', width=wd, height=ht, direction='up')"
-             tal:attributes="style string:background-image:url(${b_img/url})" />
+             tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px" />
     </tal:single_image>
 
     <div class="cycle-slideshow"
@@ -29,7 +29,7 @@
             <div class="banner-slide"
                  tal:define="scale banner/@@images;
                              b_img python:scale.scale('banner_image', width=wd, height=ht, direction='up')"
-                 tal:attributes="style string:background-image:url(${b_img/url})" ></div>
+                 tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px" ></div>
         </tal:image_set>
     </div>
 
