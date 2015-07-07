@@ -19,3 +19,7 @@
     clear: both;
 }
 
+/* Text layout for controlpanel description */
+body.template-bannerviewlet-settings #layout-contents > .discreet {
+  white-space: pre-wrap;
+}
