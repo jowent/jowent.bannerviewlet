@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
-from zope.interface import alsoProvides, implements
-from zope.component import adapts
-from zope import schema
-from plone.directives import form
-from plone.supermodel import model
-from plone.dexterity.interfaces import IDexterityContent
-from plone.autoform.interfaces import IFormFieldProvider
-
-from plone.namedfile import field as namedfile
-
 from plone.app.contenttypes import _
+from plone.autoform.interfaces import IFormFieldProvider
+from plone.dexterity.interfaces import IDexterityContent
+from plone.directives import form
+from plone.namedfile import field as namedfile
+from plone.supermodel import model
+from zope import schema
+from zope.component import adapts
+from zope.interface import alsoProvides, implements
 
 
 class IBannerImage(model.Schema):

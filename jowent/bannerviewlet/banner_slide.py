@@ -1,14 +1,10 @@
+from jowent.bannerviewlet import MessageFactory as _
 from five import grok
-
-from z3c.form import group, field
-from zope import schema
-
 from plone.dexterity.content import Item
 from plone.directives import dexterity, form
 from plone.namedfile.interfaces import IImageScaleTraversable
-
-
-from jowent.bannerviewlet import MessageFactory as _
+from z3c.form import group, field
+from zope import schema
 
 
 # Interface class; used to define content-type schema.
