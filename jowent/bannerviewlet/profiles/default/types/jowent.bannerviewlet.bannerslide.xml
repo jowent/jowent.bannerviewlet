@@ -6,7 +6,7 @@
   <!-- Basic metadata -->
   <property name="title" i18n:translate="">Banner Slide</property>
   <property name="description"
-    i18n:translate="">An image that will be displayed in the BannerViewlet as part of a slideshow</property>
+    i18n:translate="">An image of specified dimensions that is usable in the BannerViewlet as either a banner or part of a slideshow</property>
   <property name="icon_expr">string:${portal_url}/image_icon.png</property>
   <property name="factory">jowent.bannerviewlet.bannerslide</property>
   <property name="global_allow">True</property>

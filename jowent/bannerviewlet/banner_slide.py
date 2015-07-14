@@ -11,7 +11,8 @@ from zope import schema
 
 class IBannerSlide(form.Schema, IImageScaleTraversable):
     """
-    An image that will be displayed in the BannerViewlet as part of a slideshow
+    An image of specified dimensions that is usable in the BannerViewlet as
+    either a banner or part of a slideshow
     """
 
     # field defintions go here
