@@ -23,8 +23,8 @@ validation_policy_options = SimpleVocabulary(
 
 undersized_banner_behavior_options = SimpleVocabulary(
     [
-        SimpleTerm(value='centre', title=_(u'Centred within container')),
-        SimpleTerm(value='stretch', title=_(u'Stretch width-ways to fill parent (maintaining aspect ratio)')),
+        SimpleTerm(value='centred', title=_(u'Centred within container')),
+        SimpleTerm(value='stretched', title=_(u'Stretch width-ways to fill parent (maintaining aspect ratio)')),
     ])
 
 class IBannerViewletSettings(Interface):
@@ -44,7 +44,7 @@ class IBannerViewletSettings(Interface):
         title=_(u"Undersized Banner Behavior"),
         description=u"How the banner behaves when it's dimensions (specified below) are smaller than it's containing html tag",
         vocabulary=undersized_banner_behavior_options,
-        default='centre',
+        default='centred',
         required=True,
     )
 

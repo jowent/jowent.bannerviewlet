@@ -3,21 +3,28 @@
   <tal:defs
        define="banners view/banners;
                wd view/settings/required_width;
-               ht view/settings/required_height;"
+               ht view/settings/required_height;
+               centred python:view.settings.undersized_banner_behavior == 'centred'"
                >
 
     <tal:single_image
          condition="python:len(banners) == 1"
+         define="banner python: banners[0];
+                 scale banner/@@images;
+                 b_img python:scale.scale('banner_image', width=wd, height=ht, direction='up')"
          >
-        <div class="banner-img"
-             tal:define="banner python: banners[0];
-                         scale banner/@@images;
-                         b_img python:scale.scale('banner_image', width=wd, height=ht, direction='up')"
-             tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px" />
+        <div class="banner-slide banner-centred"
+             tal:condition="centred"
+             tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px"
+             ></div>
+        <img class="banner-slide banner-stretched"
+             tal:condition="not:centred"
+             tal:attributes="src   b_img/url;" />
+
     </tal:single_image>
 
     <div class="cycle-slideshow"
-         data-cycle-slides="> div.banner-slide"
+         data-cycle-slides="> .banner-slide"
          data-cycle-timeout="8000"
          data-cycle-speed="800"
 
@@ -26,10 +33,16 @@
         <tal:image_set
              repeat="banner banners"
              >
-            <div class="banner-slide"
-                 tal:define="scale banner/@@images;
-                             b_img python:scale.scale('banner_image', width=wd, height=ht, direction='up')"
-                 tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px" ></div>
+            <tal:image
+                 define="scale banner/@@images;
+                         b_img python:scale.scale('banner_image', width=wd, height=ht, direction='up')">
+                <div class="banner-slide banner-centred"
+                     tal:condition="centred"
+                     tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px" ></div>
+                <img class="banner-slide banner-stretched"
+                     tal:condition="not:centred"
+                     tal:attributes="src   b_img/url;" />
+            </tal:image>
         </tal:image_set>
     </div>
 

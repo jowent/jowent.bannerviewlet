@@ -9,7 +9,7 @@ import unittest2 as unittest
 
 
 class TestSetup(unittest.TestCase):
-    """Test that jowent.bannerviewlet is properly installed."""
+    """Test that configuration for the product can be set & read."""
 
     layer = JOWENT_BANNERVIEWLET_INTEGRATION_TESTING
 
