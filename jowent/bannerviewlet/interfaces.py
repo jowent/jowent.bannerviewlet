@@ -21,6 +21,11 @@ validation_policy_options = SimpleVocabulary(
         SimpleTerm(value='minimum', title=_(u'Minimum - An image with larger dimensions than below may be supplied, but it will be shrunk to the Banner Height & Width specified below')),
     ])
 
+undersized_banner_behavior_options = SimpleVocabulary(
+    [
+        SimpleTerm(value='centre', title=_(u'Centred within container')),
+        SimpleTerm(value='stretch', title=_(u'Stretch width-ways to fill parent (maintaining aspect ratio)')),
+    ])
 
 class IBannerViewletSettings(Interface):
     """Bannerviewlet settings. This describes records stored in the
@@ -32,6 +37,14 @@ class IBannerViewletSettings(Interface):
         description=u"",
         vocabulary=validation_policy_options,
         default='exact',
+        required=True,
+    )
+
+    undersized_banner_behavior = schema.Choice(
+        title=_(u"Undersized Banner Behavior"),
+        description=u"How the banner behaves when it's dimensions (specified below) are smaller than it's containing html tag",
+        vocabulary=undersized_banner_behavior_options,
+        default='centre',
         required=True,
     )
 

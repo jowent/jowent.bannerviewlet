@@ -44,6 +44,13 @@ class TestSetup(unittest.TestCase):
         self.failUnless('validation_policy' in IBannerViewletSettings)
         self.assertEquals(validation_policy.value, 'exact')
 
+    def test_setting_undersized_banner_behavior(self):
+        """Test that the undersized_banner_behavior record is in our control panel"""
+        undersized_banner_behavior = self.registry.records[
+            'jowent.bannerviewlet.interfaces.IBannerViewletSettings.undersized_banner_behavior']
+        self.failUnless('undersized_banner_behavior' in IBannerViewletSettings)
+        self.assertEquals(undersized_banner_behavior.value, 'centre')
+
     def test_setting_required_height(self):
         """Test that the required_height record is in our control panel"""
         required_height = self.registry.records[
