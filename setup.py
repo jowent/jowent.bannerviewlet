@@ -39,6 +39,7 @@ setup(name='jowent.bannerviewlet',
           'test': [
               'plone.app.testing',
               'plone.app.robotframework[debug]',
+              'Products.CMFPlacefulWorkflow'
           ],
       },
       entry_points="""
