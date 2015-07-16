@@ -1,29 +1,53 @@
 #banner-viewlet {
-    margin:     20px auto 45px;
-    overflow-x: hidden;
+  margin:     20px auto 45px;
+  overflow-x: hidden;
 }
 
 #viewlet-above-content #banner-viewlet {
-    margin:     0 auto 10px;
+  margin:     0 auto 10px;
 }
 
 #banner-viewlet .banner-centred {
-    display:              block;
-    background-position:  center bottom;
-    background-repeat:    no-repeat;
-    border:               medium none;
-    margin:               0 auto;
-    width:                100%;
+  display:              block;
+  background-position:  center top;
+  background-repeat:    no-repeat;
+  border:               medium none;
+  margin:               0 auto;
+  width:                100%;
+  /* Following props are for caption at bottom */
+  position:             relative;
+  padding-bottom:       40px;
 }
+#banner-viewlet .banner-centred .banner-caption {
+  bottom: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
 #banner-viewlet .banner-stretched {
-    display:    block;
-    border:     medium none;
-    width:      100%;
+  display:    block;
+  border:     medium none;
+  width:      100%;
+}
+#banner-viewlet .banner-stretched img {
+  width:      100%;
+}
+
+#banner-viewlet .banner-stretched .banner-caption {
+  bottom:     0;
+  width:      100%;
+  padding:    1em 0.75em;
+  position:   absolute;
+  background-color: #333;
+  opacity:    0.7;
+  color:      #fff;
 }
 
 /* Fix unthemed display - something went wrong before v0.2 */
 #portal-columns {
-    clear:      both;
+  clear:      both;
 }
 
 /* Text layout for controlpanel description */

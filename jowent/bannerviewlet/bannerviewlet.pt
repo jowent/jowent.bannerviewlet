@@ -13,14 +13,19 @@
                  scale banner/@@images;
                  b_img python:scale.scale('banner_image', width=wd, height=ht, direction='up')"
          >
-        <div class="banner-slide banner-centred"
+        <div class="banner-image banner-centred"
              tal:condition="centred"
-             tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px"
-             ></div>
-        <img class="banner-slide banner-stretched"
+             tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px">
+            <div class="banner-caption"
+                 tal:content="banner/banner_image_caption" />
+        </div>
+        <div class="banner-image banner-stretched"
              tal:condition="not:centred"
-             tal:attributes="src   b_img/url;" />
-
+             tal:attributes="src   b_img/url;">
+            <img tal:attributes="src   b_img/url;" />
+            <div class="banner-caption"
+                 tal:content="banner/banner_image_caption" />
+        </div>
     </tal:single_image>
 
     <div class="cycle-slideshow"
@@ -38,10 +43,17 @@
                          b_img python:scale.scale('banner_image', width=wd, height=ht, direction='up')">
                 <div class="banner-slide banner-centred"
                      tal:condition="centred"
-                     tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px" ></div>
-                <img class="banner-slide banner-stretched"
+                     tal:attributes="style string:background-image:url(${b_img/url});; height: ${ht}px" >
+                    <div class="banner-caption"
+                         tal:content="banner/banner_image_caption" />
+                </div>
+                <div class="banner-slide banner-stretched"
                      tal:condition="not:centred"
-                     tal:attributes="src   b_img/url;" />
+                     tal:attributes="src   b_img/url;">
+                    <img tal:attributes="src   b_img/url;" />
+                    <div class="banner-caption"
+                         tal:content="banner/banner_image_caption" />
+                </div>
             </tal:image>
         </tal:image_set>
     </div>
