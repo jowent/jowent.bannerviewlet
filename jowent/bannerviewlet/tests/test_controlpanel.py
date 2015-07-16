@@ -49,7 +49,7 @@ class TestSetup(unittest.TestCase):
         undersized_banner_behavior = self.registry.records[
             'jowent.bannerviewlet.interfaces.IBannerViewletSettings.undersized_banner_behavior']
         self.failUnless('undersized_banner_behavior' in IBannerViewletSettings)
-        self.assertEquals(undersized_banner_behavior.value, 'centre')
+        self.assertEquals(undersized_banner_behavior.value, 'centred')
 
     def test_setting_required_height(self):
         """Test that the required_height record is in our control panel"""
@@ -71,3 +71,7 @@ class TestSetup(unittest.TestCase):
             'jowent.bannerviewlet.interfaces.IBannerViewletSettings.max_filesize']
         self.failUnless('max_filesize' in IBannerViewletSettings)
         self.assertEquals(max_filesize.value, 200)
+
+    @unittest.skip("not yet implemented")
+    def test_actually_setting(self):
+        pass

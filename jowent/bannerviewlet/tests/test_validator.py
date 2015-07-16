@@ -16,6 +16,7 @@ class TestSetup(unittest.TestCase):
         self.portal = self.layer['portal']
         self.installer = api.portal.get_tool('portal_quickinstaller')
 
+    @unittest.skip("not yet implemented")
     def test_placeholder(self):
         """Test if something or other."""
         self.assertTrue(self.installer.isProductInstalled('jowent.bannerviewlet'))
