@@ -37,12 +37,12 @@ class TestSetup(unittest.TestCase):
                           self.portal.restrictedTraverse,
                          '@@bannerviewlet-settings')
 
-    def test_setting_dimensions_policy(self):
-        """Test that the dimensions_policy record is in our control panel"""
-        dimensions_policy = self.registry.records[
-            'jowent.bannerviewlet.interfaces.IBannerViewletSettings.dimensions_policy']
-        self.failUnless('dimensions_policy' in IBannerViewletSettings)
-        self.assertEquals(dimensions_policy.value, 'exact')
+    def test_setting_validation_policy(self):
+        """Test that the validation_policy record is in our control panel"""
+        validation_policy = self.registry.records[
+            'jowent.bannerviewlet.interfaces.IBannerViewletSettings.validation_policy']
+        self.failUnless('validation_policy' in IBannerViewletSettings)
+        self.assertEquals(validation_policy.value, 'exact')
 
     def test_setting_required_height(self):
         """Test that the required_height record is in our control panel"""

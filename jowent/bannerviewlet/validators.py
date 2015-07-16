@@ -21,7 +21,7 @@ class ImageDimensionsValidator(validator.FileUploadValidator):
             registry = getUtility(IRegistry)
             settings = registry.forInterface(IBannerViewletSettings)
 
-            # For the time being, ignore settings.dimensions_policy and
+            # For the time being, ignore settings.validation_policy and
             # go with an *exact* Dimensions check
             if settings.required_height and settings.required_width:
                 if (width != settings.required_width or

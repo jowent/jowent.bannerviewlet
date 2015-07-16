@@ -15,24 +15,26 @@ class IBannerViewletInstalled(Interface):
     """
 
 
-policy_options = SimpleVocabulary(
+validation_policy_options = SimpleVocabulary(
     [
         SimpleTerm(value='exact', title=_(u'Exact - The supplied images must exactly match the Banner Height & Width specified below')),
         SimpleTerm(value='minimum', title=_(u'Minimum - An image with larger dimensions than below may be supplied, but it will be shrunk to the Banner Height & Width specified below')),
     ])
+
 
 class IBannerViewletSettings(Interface):
     """Bannerviewlet settings. This describes records stored in the
     configuration registry and obtainable via plone.registry.
     """
 
-    dimensions_policy = schema.Choice(
+    validation_policy = schema.Choice(
         title=_(u"Banner Validation Policy"),
         description=u"",
-        vocabulary=policy_options,
+        vocabulary=validation_policy_options,
         default='exact',
         required=True,
     )
+
     required_height = schema.Int(title=_(u"Banner Height"),
                                  required=True,
                                  default=320)
