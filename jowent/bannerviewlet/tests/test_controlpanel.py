@@ -66,7 +66,7 @@ class TestSetup(unittest.TestCase):
         self.assertEquals(required_width.value, 2000)
 
     def test_setting_max_filesize(self):
-        """Test that the max_size record is in our control panel"""
+        """Test that the max_filesize record is in our control panel"""
         max_filesize = self.registry.records[
             'jowent.bannerviewlet.interfaces.IBannerViewletSettings.max_filesize']
         self.failUnless('max_filesize' in IBannerViewletSettings)

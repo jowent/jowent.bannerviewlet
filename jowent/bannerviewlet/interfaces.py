@@ -23,7 +23,7 @@ validation_policy_options = SimpleVocabulary(
 
 undersized_banner_behavior_options = SimpleVocabulary(
     [
-        SimpleTerm(value='centred', title=_(u'Centred within container')),
+        SimpleTerm(value='centred', title=_(u'Centred horizontally within container')),
         SimpleTerm(value='stretched', title=_(u'Stretch width-ways to fill parent (maintaining aspect ratio)')),
     ])
 
@@ -34,29 +34,31 @@ class IBannerViewletSettings(Interface):
 
     validation_policy = schema.Choice(
         title=_(u"Banner Validation Policy"),
-        description=u"",
+        description=_(u"How strictly the dimensions of a Banner Slide will be validated"),
         vocabulary=validation_policy_options,
         default='exact',
         required=True,
     )
 
-    undersized_banner_behavior = schema.Choice(
-        title=_(u"Undersized Banner Behavior"),
-        description=u"How the banner behaves when it's dimensions (specified below) are smaller than it's containing html tag",
-        vocabulary=undersized_banner_behavior_options,
-        default='centred',
-        required=True,
-    )
-
-    required_height = schema.Int(title=_(u"Banner Height"),
+    required_height = schema.Int(title=_(u"BannerViewlet Height"),
+                                 description=_(u"The height of the banner viewlet"),
                                  required=True,
                                  default=320)
 
     required_width = schema.Int(title=_(u"Banner Width"),
+                                description=_(u"The width of the banner viewlet"),
                                 required=True,
                                 default=2000)
 
-    max_filesize = schema.Int(title=_(u"Maximum Filesize (in KB)"),
+    max_filesize = schema.Int(title=_(u"Maximum Filesize for a Banner Slide (in KB)"),
                               description=_(u"Leave this empty to stop filesize being checked"),
                               required=False,
                               default=200)
+
+    undersized_banner_behavior = schema.Choice(
+        title=_(u"Undersized Banner Viewlet Behavior"),
+        description=_(u"How the banner viewlet behaves when it's dimensions (specified above) are smaller than it's containing html tag"),
+        vocabulary=undersized_banner_behavior_options,
+        default='centred',
+        required=True,
+    )
