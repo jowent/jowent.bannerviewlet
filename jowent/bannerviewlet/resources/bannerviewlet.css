@@ -7,6 +7,9 @@
   margin:     0 auto 10px;
 }
 
+#banner-viewlet .cycle-slideshow {
+  overflow: hidden;
+}
 #banner-viewlet .banner-centred {
   display:              block;
   background-position:  center top;
