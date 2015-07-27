@@ -40,12 +40,12 @@ class IBannerViewletSettings(Interface):
         required=True,
     )
 
-    required_height = schema.Int(title=_(u"BannerViewlet Height"),
+    required_height = schema.Int(title=_(u"Banner Viewlet Height"),
                                  description=_(u"The height of the banner viewlet"),
                                  required=True,
                                  default=320)
 
-    required_width = schema.Int(title=_(u"Banner Width"),
+    required_width = schema.Int(title=_(u"Banner Viewlet Width"),
                                 description=_(u"The width of the banner viewlet"),
                                 required=True,
                                 default=2000)
