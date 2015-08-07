@@ -34,6 +34,7 @@ setup(name='jowent.bannerviewlet',
           'zope.interface',
           'zope.component',
           'plone.app.registry',
+          'collective.js.cycle2',
       ],
       extras_require={
           'test': [
