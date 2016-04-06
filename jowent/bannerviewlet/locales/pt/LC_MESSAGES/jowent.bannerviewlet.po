@@ -39,6 +39,7 @@ msgid "Banner Viewlet Height"
 msgstr ""
 
 #: ./controlpanel.py:10
+#: ./profiles/default/controlpanel.xml
 msgid "Banner Viewlet Settings"
 msgstr ""
 
