@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-06 14:45+0000\n"
+"POT-Creation-Date: 2016-04-06 14:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,10 @@ msgstr ""
 
 #: ./interfaces.py:48
 msgid "Banner Viewlet Width"
+msgstr ""
+
+#: ./banner_slide_templates/view.pt:19
+msgid "Caption:"
 msgstr ""
 
 #: ./interfaces.py:26
@@ -100,5 +104,10 @@ msgstr ""
 
 #: ./interfaces.py:59
 msgid "Undersized Banner Viewlet Behavior"
+msgstr ""
+
+#. Default: "The banner shown above will be the default banner for this folder, OR part of a slideshow in this folder."
+#: ./banner_slide_templates/view.pt:13
+msgid "explain_banner_slide"
 msgstr ""
 

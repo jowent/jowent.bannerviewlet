@@ -7,24 +7,19 @@
       i18n:domain="jowent.bannerviewlet">
 <body>
 
-<tal:comment tal:condition="nothing">
-    This is a sample view template. It will not be used for rendering the
-    content unless activated by creation of a view class with a matching name.
-</tal:comment>
-
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-    <h2>
-        The banner shown above will be part of a slideshow in this folder
+    <h2 i18n:translate="explain_banner_slide">
+        The banner shown above will be the default banner for this folder, 
+        OR part of a slideshow in this folder.
     </h2>
 
 
-    <div><strong>Caption:</strong> <span tal:content="context/banner_image_caption">Caption</span></div>
+    <div><strong i18n:translate="">Caption:</strong> <span tal:content="context/banner_image_caption">Caption</span></div>
 
   </metal:content-core>
 </metal:main>
 
 </body>
 </html>
-

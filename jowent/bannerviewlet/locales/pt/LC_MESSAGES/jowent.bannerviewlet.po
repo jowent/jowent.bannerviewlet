@@ -47,6 +47,10 @@ msgstr ""
 msgid "Banner Viewlet Width"
 msgstr ""
 
+#: ./banner_slide_templates/view.pt:19
+msgid "Caption:"
+msgstr ""
+
 #: ./interfaces.py:26
 msgid "Centred horizontally within container"
 msgstr ""
@@ -89,5 +93,10 @@ msgstr ""
 
 #: ./interfaces.py:59
 msgid "Undersized Banner Viewlet Behavior"
+msgstr ""
+
+#. Default: "The banner shown above will be the default banner for this folder, OR part of a slideshow in this folder."
+#: ./banner_slide_templates/view.pt:13
+msgid "explain_banner_slide"
 msgstr ""
 
