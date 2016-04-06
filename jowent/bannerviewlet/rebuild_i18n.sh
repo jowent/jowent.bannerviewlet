@@ -1,6 +1,6 @@
 #! /bin/sh
 
-I18NDOMAIN="antaco.policy"
+I18NDOMAIN="jowent.bannerviewlet"
 
 # Check if manual overrides exist
 if test -e locales/manual.pot; then
