@@ -4,5 +4,7 @@
 *.egg
 *.eggs
 *.egg-info
+# Ignore mo files (though they ARE distributed with egg - see zest.pocompile docs)
+*.mo
 # Ignore dist directory
 dist
