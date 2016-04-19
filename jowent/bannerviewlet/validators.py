@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from five import grok
+from jowent.bannerviewlet import MessageFactory as _
 from jowent.bannerviewlet.behaviors.bannerimage import IBannerImage
 from jowent.bannerviewlet.interfaces import IBannerViewletSettings
 from plone.namedfile.interfaces import INamedBlobImageField
@@ -23,24 +24,21 @@ class ImageDimensionsValidator(validator.FileUploadValidator):
 
             # For the time being, ignore settings.validation_policy and
             # go with an *exact* Dimensions check
-            if settings.required_height and settings.required_width:
-                if (width != settings.required_width or
-                    height != settings.required_height):
-                    raise Invalid("Image has wrong dimensions - it should be %d x %d pixels (h x w)"
-                                  ", but is %d x %d" %
-                                  (settings.required_height, settings.required_width, height, width))
-            elif settings.required_height:
-                if (height != settings.required_height):
-                    raise Invalid("Image is the wrong height - it should be %d pixels" %
-                                  (settings.required_height))
-            elif settings.required_width:
-                if (width != settings.required_width):
-                    raise Invalid("Image is the wrong width - it should be %d pixels" %
-                                  (settings.required_width))
+            if (width != settings.required_width or
+                height != settings.required_height):
+                raise Invalid(_(u"image_wrong_dimensions",
+                        default=u"Image has wrong dimensions - it should be ${required_height} x ${required_width} pixels (h x w)"
+                              ", but is ${actual_height} x ${actual_width}",
+                        mapping={"required_height": settings.required_height,
+                                 "required_width": settings.required_width,
+                                 "actual_height": height,
+                                 "actual_width": width}))
 
             # Lastly check filesize
             if value.getSize() > (settings.max_filesize * 1024):
-                raise Invalid("Image filesize is too large. Maximum permitted: %dKB " % settings.max_filesize)
+                raise Invalid(_(u"image_too_large",
+                            default=u"Image filesize is too large. Maximum permitted: ${max_filesize}KB",
+                            mapping={"max_filesize": settings.max_filesize}))
 
 
 validator.WidgetValidatorDiscriminators(ImageDimensionsValidator,

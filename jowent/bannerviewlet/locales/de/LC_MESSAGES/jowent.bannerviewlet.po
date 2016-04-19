@@ -14,11 +14,16 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: ./behaviors/configure.zcml:19
+msgid "Adds the option to specify the image used in the banner viewlet"
+msgstr ""
+
 #: ./profiles/default/types/jowent.bannerviewlet.bannerslide.xml
 msgid "An image of specified dimensions that is usable in the BannerViewlet as either a banner or part of a slideshow"
 msgstr ""
 
 #: ./behaviors/bannerimage.py:17
+#: ./behaviors/configure.zcml:19
 msgid "Banner Image"
 msgstr ""
 
@@ -47,6 +52,10 @@ msgstr ""
 msgid "Banner Viewlet Width"
 msgstr ""
 
+#: ./configure.zcml:36
+msgid "Banner/Slideshow Viewlet"
+msgstr ""
+
 #: ./banner_slide_templates/view.pt:19
 msgid "Caption:"
 msgstr ""
@@ -57,6 +66,10 @@ msgstr ""
 
 #: ./interfaces.py:20
 msgid "Exact - The supplied images must exactly match the Banner Height & Width specified below"
+msgstr ""
+
+#: ./configure.zcml:36
+msgid "Extension profile for Banner/Slideshow Viewlet"
 msgstr ""
 
 #: ./interfaces.py:37
@@ -100,3 +113,13 @@ msgstr ""
 msgid "explain_banner_slide"
 msgstr ""
 
+#. Default: "Image filesize is too large. Maximum permitted: ${max_filesize}KB"
+#: ./validators.py:39
+#, fuzzy
+msgid "image_too_large"
+msgstr "Bildgröße ist zu groß. Maximal zulässig: ${max_filesize}KB"
+
+#. Default: "Image has wrong dimensions - it should be ${required_height} x ${required_width} pixels (h x w), but is ${actual_height} x ${actual_width}"
+#: ./validators.py:29
+msgid "image_wrong_dimensions"
+msgstr "Das Bild hat einen falschen Dimensionen - es sollte sein ${required_height} x ${required_width} pixel (h x b), aber ist ${actual_height} x ${actual_width}"
