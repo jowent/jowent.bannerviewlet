@@ -115,11 +115,10 @@ msgstr ""
 
 #. Default: "Image filesize is too large. Maximum permitted: ${max_filesize}KB"
 #: ./validators.py:39
-#, fuzzy
 msgid "image_too_large"
-msgstr "Bildgröße ist zu groß. Maximal zulässig: ${max_filesize}KB"
+msgstr ""
 
 #. Default: "Image has wrong dimensions - it should be ${required_height} x ${required_width} pixels (h x w), but is ${actual_height} x ${actual_width}"
 #: ./validators.py:29
 msgid "image_wrong_dimensions"
-msgstr "Das Bild hat einen falschen Dimensionen - es sollte sein ${required_height} x ${required_width} pixel (h x b), aber ist ${actual_height} x ${actual_width}"
+msgstr ""
