@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.9 (06 May 2016)
+-----------------
+
+- Internationalize product - isolate strings which need translating
+- Make ImageDimensionsValidator translatable, and simplify validation as 
+  required_height & width are always set
+
+
 0.1dev (unreleased)
 -------------------
 
