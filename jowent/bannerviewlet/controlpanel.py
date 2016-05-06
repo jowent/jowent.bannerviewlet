@@ -8,7 +8,8 @@ class BannerViewletSettingsEditForm(controlpanel.RegistryEditForm):
 
     schema = IBannerViewletSettings
     label = _(u"Banner Viewlet Settings")
-    description = _(u"""These settings control the dimensions of the BannerViewlet,
+    description = _(u"banner_viewlet_settings_intro",
+                    default=u"""These settings control the dimensions of the BannerViewlet,
             and the permitted dimensions and filesize of the Banner Slides which
             are used to fill it. &nbsp;&nbsp;
             Note that changing these dimensions will <b>NOT</b> revalidate or resize

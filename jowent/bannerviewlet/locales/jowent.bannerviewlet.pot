@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-19 14:24+0000\n"
+"POT-Creation-Date: 2016-05-06 15:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,16 +107,13 @@ msgstr ""
 msgid "The width of the banner viewlet"
 msgstr ""
 
-#: ./controlpanel.py:11
-msgid "These settings control the dimensions of the BannerViewlet,
-            and the permitted dimensions and filesize of the Banner Slides which
-            are used to fill it. &nbsp;&nbsp;
-            Note that changing these dimensions will <b>NOT</b> revalidate or resize
-            any existing Banner Slides."
-msgstr ""
-
 #: ./interfaces.py:59
 msgid "Undersized Banner Viewlet Behavior"
+msgstr ""
+
+#. Default: "These settings control the dimensions of the BannerViewlet,\n            and the permitted dimensions and filesize of the Banner Slides which\n            are used to fill it. &nbsp;&nbsp;\n            Note that changing these dimensions will <b>NOT</b> revalidate or resize\n            any existing Banner Slides."
+#: ./controlpanel.py:11
+msgid "banner_viewlet_settings_intro"
 msgstr ""
 
 #. Default: "The banner shown above will be the default banner for this folder, OR part of a slideshow in this folder."
